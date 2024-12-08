@@ -34,8 +34,9 @@ class Conv1d(minitorch.Module):
         self.bias = RParam(1, out_channels, 1)
 
     def forward(self, input):
-        # TODO: Implement for Task 4.5.
-        raise NotImplementedError("Need to implement for Task 4.5")
+        # Implemented for Task 4.5.
+        # Apply the 1D convolution operation to the input tensor with the weights tensor then add the bias tensor
+        return minitorch.conv1d(input, self.weights.value) + self.bias.value
 
 
 class CNNSentimentKim(minitorch.Module):
@@ -61,15 +62,63 @@ class CNNSentimentKim(minitorch.Module):
     ):
         super().__init__()
         self.feature_map_size = feature_map_size
-        # TODO: Implement for Task 4.5.
-        raise NotImplementedError("Need to implement for Task 4.5")
+        # Implemented for Task 4.5.
+        # Conv1d layer for 3-gram features (filter_sizes[0] = 3), takes embedding_size input channels and outputs feature_map_size channels
+        self.conv1 = Conv1d(embedding_size, feature_map_size, filter_sizes[0])
+        # Conv1d layer for 4-gram features (filter_sizes[1] = 4), parallel to conv1, captures different n-gram patterns
+        self.conv2 = Conv1d(embedding_size, feature_map_size, filter_sizes[1])
+        # Conv1d layer for 5-gram features (filter_sizes[2] = 5), parallel to conv1/conv2, captures longer phrase patterns
+        self.conv3 = Conv1d(embedding_size, feature_map_size, filter_sizes[2])
+        # Final linear layer reduces feature_map_size to 1 output for binary classification, after max-pooling and combining features from all conv layers
+        self.final_linear = Linear(feature_map_size, 1)
+        # Dropout rate used during training to prevent overfitting, which is typically set to 0.25 (25% of neurons randomly disabled during training)
+        self.dropout = dropout
 
     def forward(self, embeddings):
         """
         embeddings tensor: [batch x sentence length x embedding dim]
         """
-        # TODO: Implement for Task 4.5.
-        raise NotImplementedError("Need to implement for Task 4.5")
+        # Implemented for Task 4.5.
+        # Reshape tensor from [batch x seq_len x emb_dim] to [batch x emb_dim x seq_len], which is required for Conv1d operations
+        reshaped_embeddings = embeddings.permute(0, 2, 1)
+        # Process with different kernel sizes (3,4,5) to capture different n-gram patterns
+        # Apply convolution, ReLU activation, and max-over-time pooling for each kernel
+        x1 = minitorch.nn.max(
+            # kernel_size = 3
+            self.conv1(reshaped_embeddings).relu(),
+            # max along sequence length dimension
+            2
+        )
+        x2 = minitorch.nn.max(
+            # kernel_size = 4
+            self.conv2(reshaped_embeddings).relu(),
+            # max along sequence length dimension
+            2
+        )
+        x3 = minitorch.nn.max(
+            # kernel_size = 5
+            self.conv3(reshaped_embeddings).relu(),
+            # max along sequence length dimension
+            2
+        )
+        # Combine features from all kernel sizes
+        x_mid = x1 + x2 + x3
+        # Reshape tensor for linear layer, converting from [batch x feature_map_size x 1] to [batch x feature_map_size]
+        x = self.final_linear(
+            x_mid.view(
+                x_mid.size // self.feature_map_size,
+                self.feature_map_size
+            )
+        )
+        # Apply dropout during training only, with dropout_rate = self.dropout (typically 0.25)
+        x = minitorch.nn.dropout(
+            x,
+            self.dropout,
+            # False during training, True during evaluation
+            not self.training
+        )
+        # Apply sigmoid activation and reshape to [batch_size] for binary classification output
+        return x.sigmoid().view(x.shape[0])
 
 
 # Evaluation helper methods
