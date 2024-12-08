@@ -24,7 +24,7 @@ pyright..................................................................Failed
   /Users/syedakazmi-shah/Documents/Cornell/MLE/mod4-manzala/tests/strategies.py:17:32 - error: "is_close" is not a known attribute of module "minitorch" (reportAttributeAccessIssue)
 1 error, 0 warnings, 0 informations
 
-(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pre-commit run --all 
+(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pre-commit run --all
 check for added large files..............................................Passed
 check for case conflicts.................................................Passed
 check docstring is first.................................................Passed
@@ -45,7 +45,7 @@ pyright..................................................................Failed
   /Users/syedakazmi-shah/Documents/Cornell/MLE/mod4-manzala/tests/strategies.py:17:32 - error: "is_close" is not a known attribute of module "minitorch" (reportAttributeAccessIssue)
 1 error, 0 warnings, 0 informations
 
-(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pre-commit run --all 
+(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pre-commit run --all
 check for added large files..............................................Passed
 check for case conflicts.................................................Passed
 check docstring is first.................................................Passed
@@ -59,7 +59,7 @@ trim trailing whitespace.................................................Passed
 ruff.....................................................................Passed
 ruff-format..............................................................Passed
 pyright..................................................................Passed
-(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % python project/run_sentiment.py                           
+(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % python project/run_sentiment.py
 
 Traceback (most recent call last):
   File "/Users/syedakazmi-shah/Documents/Cornell/MLE/mod4-manzala/project/run_sentiment.py", line 5, in <module>
@@ -71,7 +71,7 @@ Traceback (most recent call last):
   File "/Users/syedakazmi-shah/Documents/Cornell/MLE/mod4-manzala/project/run_sentiment.py", line 5, in <module>
     import minitorch
 ModuleNotFoundError: No module named 'minitorch'
-(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pre-commit run --all           
+(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pre-commit run --all
 (.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pip install -e .
 Obtaining file:///Users/syedakazmi-shah/Documents/Cornell/MLE/mod4-manzala
   Installing build dependencies ... done
@@ -111,7 +111,7 @@ Traceback (most recent call last):
   File "/Users/syedakazmi-shah/.pyenv/versions/3.11.4/lib/python3.11/dataclasses.py", line 815, in _get_field
     raise ValueError(f'mutable default {type(f.default)} for field '
 ValueError: mutable default <class 'datasets.utils.version.Version'> for field version is not allowed: use default_factory
-(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pre-commit run --all           
+(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pre-commit run --all
 check for added large files..............................................Passed
 check for case conflicts.................................................Passed
 check docstring is first.................................................Passed
@@ -230,7 +230,7 @@ Requirement already satisfied: mdurl~=0.1 in ./.venv/lib/python3.11/site-package
 
 [notice] A new release of pip is available: 23.1.2 -> 24.3.1
 [notice] To update, run: pip install --upgrade pip
-(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pip install -r requirements.txt      
+(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pip install -r requirements.txt
 
 Requirement already satisfied: colorama==0.4.3 in ./.venv/lib/python3.11/site-packages (from -r requirements.txt (line 1)) (0.4.3)
 Requirement already satisfied: hypothesis==6.54 in ./.venv/lib/python3.11/site-packages (from -r requirements.txt (line 2)) (6.54.0)
@@ -259,7 +259,7 @@ Requirement already satisfied: platformdirs<5,>=3.9.1 in ./.venv/lib/python3.11/
 
 [notice] A new release of pip is available: 23.1.2 -> 24.3.1
 [notice] To update, run: pip install --upgrade pip
-(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % python project/run_sentiment.py      
+(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % python project/run_sentiment.py
 
 Traceback (most recent call last):
   File "/Users/syedakazmi-shah/Documents/Cornell/MLE/mod4-manzala/project/run_sentiment.py", line 6, in <module>
@@ -298,7 +298,7 @@ HTTP request sent, awaiting response... 200 OK
 Length: 29170 (28K) [text/html]
 Saving to: ‘data/index.html.tmp’
 
-index.html.tmp                           100%[================================================================================>]  28.49K  --.-KB/s    in 0.03s   
+index.html.tmp                           100%[================================================================================>]  28.49K  --.-KB/s    in 0.03s
 
 2024-12-06 16:56:05 (842 KB/s) - ‘data/index.html.tmp’ saved [29170/29170]
 
@@ -330,7 +330,7 @@ HTTP request sent, awaiting response... 200 OK
 Length: 69304 (68K) [text/html]
 Saving to: ‘data/index.html.tmp’
 
-index.html.tmp                           100%[================================================================================>]  67.68K  --.-KB/s    in 0.1s    
+index.html.tmp                           100%[================================================================================>]  67.68K  --.-KB/s    in 0.1s
 
 2024-12-06 16:56:05 (610 KB/s) - ‘data/index.html.tmp’ saved [69304/69304]
 
@@ -384,7 +384,7 @@ Traceback (most recent call last):
   File "/Users/syedakazmi-shah/.pyenv/versions/3.11.4/lib/python3.11/dataclasses.py", line 815, in _get_field
     raise ValueError(f'mutable default {type(f.default)} for field '
 ValueError: mutable default <class 'datasets.utils.version.Version'> for field version is not allowed: use default_factory
-(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pre-commit run --all                 
+(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pre-commit run --all
 (.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % ls
 README.md               files_to_sync.txt       project                 requirements.extra.txt  setup.py                tests
 data                    minitorch               pyproject.toml          requirements.txt        sync_previous_module.py
@@ -392,13 +392,13 @@ data                    minitorch               pyproject.toml          requirem
 syedakazmi-shah@Syedas-MBP mod4-manzala % ls
 README.md               files_to_sync.txt       project                 requirements.extra.txt  setup.py                tests
 data                    minitorch               pyproject.toml          requirements.txt        sync_previous_module.py
-syedakazmi-shah@Syedas-MBP mod4-manzala % rm -rf .venv 
+syedakazmi-shah@Syedas-MBP mod4-manzala % rm -rf .venv
 syedakazmi-shah@Syedas-MBP mod4-manzala % cd /Users/syedakazmi-shah/Documents/Cornell/MLE/mod4-manzala
 python3 -m venv .venv
 
 syedakazmi-shah@Syedas-MBP mod4-manzala % source .venv/bin/activate
 
-(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % mnist_get_data.sh                                           
+(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % mnist_get_data.sh
 data directory already present, exiting
 (.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % source .venv/bin/activate
 
@@ -410,7 +410,7 @@ Successfully installed python-mnist-0.7
 
 [notice] A new release of pip is available: 23.1.2 -> 24.3.1
 [notice] To update, run: pip install --upgrade pip
-(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pip3 install -r requirements.txt 
+(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % pip3 install -r requirements.txt
 Collecting colorama==0.4.3 (from -r requirements.txt (line 1))
   Using cached colorama-0.4.3-py2.py3-none-any.whl (15 kB)
 Collecting hypothesis==6.54 (from -r requirements.txt (line 2))
@@ -621,7 +621,7 @@ Successfully installed MarkupSafe-3.0.2 aiohappyeyeballs-2.4.4 aiohttp-3.11.10 a
 
 [notice] A new release of pip is available: 23.1.2 -> 24.3.1
 [notice] To update, run: pip install --upgrade pip
-(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % python project/run_sentiment.py                             
+(.venv) syedakazmi-shah@Syedas-MBP mod4-manzala % python project/run_sentiment.py
 
 Traceback (most recent call last):
   File "/Users/syedakazmi-shah/Documents/Cornell/MLE/mod4-manzala/project/run_sentiment.py", line 5, in <module>
